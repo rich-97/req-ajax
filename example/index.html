@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <style media="screen">
+            .container {
+                width: 1000px;
+                padding: 30px;
+                margin: 0 auto;
+            }
+        </style>
+        <script src="ajax.js" charset="utf-8"></script>
+        <script src="example.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Ajax GET</h1>
+            <button type="button" name="get">Obtaing data</button>
+            <div class="get-data"></div>
+
+            <h2>Ajax POST</h2>
+            <form id="post-form" method="post">
+                <input type="text">
+                <button type="submit">Send</button>
+            </form>
+
+            <h3>Ajax DELETE</h3>
+            <input type="number">
+            <button type="button" name="delete">delete last item</button>
+
+            <h4>Ajax get (JSON)</h4>
+            <button type="button" name="getJSON">Get JSON</button>
+            <div class="get-json"></div>
+
+            <h5>Ajax post (JSON)</h5>
+            <form id="post-json-form" action="/post" method="post">
+                <input type="text" name="key">
+                <input type="text" name="value">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </body>
+</html>

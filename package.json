@@ -1,0 +1,33 @@
+{
+  "name": "req-ajax",
+  "version": "1.0.0",
+  "description": "Standalone library for ajax requests",
+  "main": "ajax.js",
+  "scripts": {
+    "test": "nodejs example/server.js",
+    "build": "npm install && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rich-97/req-ajax.git"
+  },
+  "keywords": [
+    "ajax",
+    "javascript"
+  ],
+  "author": "Ricardo Moreno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rich-97/req-ajax/issues"
+  },
+  "homepage": "https://github.com/rich-97/req-ajax#readme",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-preset-env": "^1.2.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-dest": "^0.2.3",
+    "gulp-uglyfly": "^1.4.2"
+  },
+  "dependencies": {}
+}
