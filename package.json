@@ -1,6 +1,6 @@
 {
   "name": "req-ajax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Standalone library for ajax requests",
   "main": "ajax.js",
   "scripts": {
