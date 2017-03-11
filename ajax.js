@@ -15,19 +15,13 @@ const ajax = {
     let { url } = config
 
     if (params) {
-      let count = 0
       let query = '?'
 
       for (let key in params) {
         query += `${key}=${params[key]}&`
-        count++
       }
 
-      if (count < 2) {
-        query = query.replace(/&$/, '')
-      }
-
-      url += query
+      url += query.replace(/&$/, '')
     }
 
     xhr.open(method, url, true)
