@@ -9,22 +9,28 @@ const ajax = {
 
   query: function (config) {
     const xhr = this.xhr()
+    const { url } = config
     const { method } = config
     const { params } = config
+    const { fragment } = config
 
-    let { url } = config
+    let query = url
 
     if (params) {
-      let query = '?'
+      query += '?'
 
       for (let key in params) {
         query += `${key}=${params[key]}&`
       }
 
-      url += query.replace(/&$/, '')
+      query = query.replace(/&$/, '')
     }
 
-    xhr.open(method, url, true)
+    if (fragment) {
+      query += `#${fragment}`
+    }
+
+    xhr.open(method, query, true)
     xhr.send()
 
     return new Promise(function (resolve, reject) {
