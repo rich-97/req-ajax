@@ -39,6 +39,7 @@ the **Object** is the config of that request, this object can have 3 properties:
 1.  `url` **{String}** is required.
 2.  `method` **{String}** is required.
 3.  `params` **{Object}** is optional, this property is for specific queries. The queries like this `foo=bar&bar=foo` can be transformed to `{ foo: 'bar', bar: 'foo' }` in the JavaScript object notation, so is much better for make queries and easy.
+4.  `fragment` **{String}** is optional.
 
 Example:
 
@@ -48,8 +49,9 @@ ajax.query({
     method: 'GET',
     params: {
         foo: 'bar'
-    }
-    // the url should be 'somepath?foo=bar'.
+    },
+    fragment: '123'
+    // the url should be 'somepath?foo=bar#123'.
 }).then(function (res) {
     // Do something with the response...
 }).catch(function (err) {
