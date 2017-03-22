@@ -1,3 +1,10 @@
+/*
+ * (c) Ricardo Moreno <morenoricardo237@gmail.com>
+ *
+ * For more details about the license of this source code,
+ * please view the license file LICENSE.
+ */
+
 const ajax = {
   xhr: function () {
     try {
