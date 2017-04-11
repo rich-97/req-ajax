@@ -107,6 +107,6 @@ ajax.post('somepath', data, true)
 
 For more examples and test execute `npm run test` and open your browser in the url `http://localhost:8080`.
 
-## LICENSE
+## License
 
 [MIT](https://github.com/rich-97/req-ajax/blob/master/LICENSE)
