@@ -1,7 +1,7 @@
 # req-ajax
 
 [![npm](https://img.shields.io/npm/v/req-ajax.svg)](https://www.npmjs.com/package/req-ajax)
-[![npm](https://img.shields.io/npm/dt/req-ajax.svg)](https://www.npmjs.com/package/req-ajax)
+[![npm](https://img.shields.io/npm/dm/req-ajax.svg)](https://www.npmjs.com/package/req-ajax)
 
 Standalone library for ajax requests.
 
