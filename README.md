@@ -9,21 +9,17 @@ Standalone library for ajax requests.
 
 Execute this command in your project for install the package:
 
-`npm install --save req-ajax`
-
-After the download you should install the dependencies and build es2015 version with **babel.js**, so execute this:
-
-`cd node_modules/req-ajax; npm run build; cd -`
-
-The file `ajax.js` and `ajax.min.js` are in `dist` directory.
+`npm install req-ajax --save`
 
 ## Usage
 
-Simple external script in your html file:
+Simple external script in your **html** file:
 
 ```html
 <script src="node_modules/req-ajax/dist/ajax.min.js"></script>
 ```
+
+This can be used with `webpack` just requiring the module `req-ajax`.
 
 ## API
 
@@ -104,6 +100,8 @@ ajax.post('somepath', data, true)
         // Something it's wrong.
     })
 ```
+
+## Test
 
 For more examples and test execute `npm run test` and open your browser in the url `http://localhost:8080`.
 

@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  * (c) Ricardo Moreno <morenoricardo237@gmail.com>
  *
@@ -5,8 +7,8 @@
  * please view the license file LICENSE.
  */
 
-const ajax = {
-  xhr: function () {
+var ajax = {
+  xhr: function xhr() {
     try {
       return new window.XMLHttpRequest();
     } catch (err) {
@@ -14,27 +16,28 @@ const ajax = {
     }
   },
 
-  query: function (config) {
-    const xhr = this.xhr();
-    const { url } = config;
-    const { method } = config;
-    const { params } = config;
-    const { fragment } = config;
+  query: function query(config) {
+    var xhr = this.xhr();
+    var url = config.url;
+    var method = config.method;
+    var params = config.params;
+    var fragment = config.fragment;
 
-    let query = url;
+
+    var query = url;
 
     if (params) {
       query += '?';
 
-      for (let key in params) {
-        query += `${key}=${params[key]}&`;
+      for (var key in params) {
+        query += key + '=' + params[key] + '&';
       }
 
       query = query.replace(/&$/, '');
     }
 
     if (fragment) {
-      query += `#${fragment}`;
+      query += '#' + fragment;
     }
 
     xhr.open(method, query, true);
@@ -45,14 +48,16 @@ const ajax = {
         if (this.readyState === 4) {
           resolve(this.responseText);
         } else if (this.status === 403 || this.status === 404) {
-          reject(`Status code ${this.status}`);
+          reject('Status code ' + this.status);
         }
       };
     });
   },
 
-  get: function (url, json = false) {
-    const xhr = this.xhr();
+  get: function get(url) {
+    var json = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+    var xhr = this.xhr();
 
     xhr.open('GET', url, true);
     xhr.send();
@@ -60,19 +65,21 @@ const ajax = {
     return new Promise(function (resolve, reject) {
       xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
-          let responseText = this.responseText;
-          let response = json ? JSON.parse(responseText) : responseText;
+          var responseText = this.responseText;
+          var response = json ? JSON.parse(responseText) : responseText;
 
           resolve(response);
         } else if (this.status === 403 || this.status === 404) {
-          reject(`Status code ${this.status}`);
+          reject('Status code ' + this.status);
         }
       };
     });
   },
 
-  post: function (url, data, json = false) {
-    const xhr = this.xhr();
+  post: function post(url, data) {
+    var json = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+    var xhr = this.xhr();
     data = json ? JSON.stringify(data) : data;
 
     xhr.open('POST', url, true);
@@ -85,11 +92,10 @@ const ajax = {
         if (this.readyState === 4) {
           resolve(this.responseText);
         } else if (this.status === 403 || this.status === 404) {
-          reject(`Status code ${this.status}`);
+          reject('Status code ' + this.status);
         }
       };
     });
   }
 };
 
-module.exports = ajax;
