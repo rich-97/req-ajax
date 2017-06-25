@@ -1,1 +1,1 @@
-module.exports = require('./ajax');
+module.exports = require('./src/ajax');
