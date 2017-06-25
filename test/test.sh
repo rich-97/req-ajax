@@ -19,4 +19,4 @@ fi
 
 echo 'Test req-ajax with your browser...'
 
-nodejs './test/test-server.js'
+node './test/test-server.js'

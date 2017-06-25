@@ -38,7 +38,7 @@ window.onload = function () {
   };
 
   $btnGetJSON.onclick = function () {
-    ajax.get('/test.json', true)
+    ajax.get({ url: '/foo', params: { file: 'test.json' } }, true)
       .then(function (res) { $getJSON.textContent = JSON.stringify(res); })
       .catch(function (err) { console.log(err); });
   };
