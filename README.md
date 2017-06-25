@@ -47,8 +47,8 @@ ajax.query({
         foo: 'bar'
     },
     fragment: '123'
-    // the url should be 'somepath?foo=bar#123'.
-}).then(function (res) {
+    // the uri should be 'somepath?foo=bar#123'.
+}).then(function (res) { 
     // Do something with the response...
 }).catch(function (err) {
     // Manage the error of the request (if appear).
