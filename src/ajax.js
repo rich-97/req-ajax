@@ -29,14 +29,14 @@
  *   @param {Boolean} json - indicate if the request data will be parse as json.
  */
 const ajax = {
-  _createXHR: function () {
+  _createXHR () {
     try {
       return new window.XMLHttpRequest()
     } catch (err) {
       throw new Error('Error creating the XMLHttpRequest object')
     }
   },
-  _parseQuery: function (url, params, fragment) {
+  _parseQuery (url, params, fragment) {
     let uri = url
 
     if (params) {
@@ -55,7 +55,7 @@ const ajax = {
 
     return uri
   },
-  query: function (config) {
+  query (config) {
     const xhr = this._createXHR()
     const { url, method, params, fragment } = config
 
@@ -74,7 +74,7 @@ const ajax = {
       }
     })
   },
-  get: function (url, json = false) {
+  get (url, json = false) {
     const xhr = this._createXHR()
     const method = 'GET'
 
@@ -99,7 +99,7 @@ const ajax = {
       }
     })
   },
-  post: function (url, data, json = false) {
+  post (url, data, json = false) {
     const xhr = this._createXHR()
     const method = 'POST'
 
