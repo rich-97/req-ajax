@@ -3,6 +3,9 @@
   "version": "3.0.0",
   "description": "Standalone library for ajax requests",
   "main": "index.js",
+  "scripts": {
+    "postinstall": "npm i; gulp; gulp removeCommonJS"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rich-97/req-ajax.git"
