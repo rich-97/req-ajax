@@ -43,7 +43,7 @@ the **config** object:
 
 ## Test
 
-For the unit-test execute `npm run test`.
+For the unit-test install the `devDependencies` and open the file `test/index.html` in your browser.
 
 ## License
 
