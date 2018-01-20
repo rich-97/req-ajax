@@ -1,13 +1,13 @@
-const fs = require('fs')
+const fs   = require('fs')
 const path = require('path')
 
-const gulp = require('gulp')
-const babel = require('gulp-babel')
+const gulp    = require('gulp')
+const babel   = require('gulp-babel')
 const uglyfly = require('gulp-uglyfly')
-const dest = require('gulp-dest')
+const dest    = require('gulp-dest')
 
-gulp.task('babel', function () {
-  gulp.src('./src/ajax.js')
+gulp.task('babel', function() {
+  gulp.src('./Ajax.js')
     .pipe(babel())
     .pipe(gulp.dest('./dist'))
     .pipe(uglyfly())
@@ -15,11 +15,12 @@ gulp.task('babel', function () {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('removeCommonJS', function () {
-  ['js', 'min.js'].forEach(function (ext) {
-    const pathFile = path.join(__dirname, `dist/ajax.${ext}`)
+gulp.task('removeCommonJS', function() {
+  ['js', 'min.js'].forEach(function(ext) {
+    const pathFile = path.join(__dirname, `dist/Ajax.${ext}`)
     let src = fs.readFileSync(pathFile).toString()
-    src = src.replace(/module\.exports(\W=\W|=)ajax;/, '')
+    src = src.replace(/module\.exports(\W=\W|=)Ajax;/, '')
+
     fs.writeFileSync(pathFile, src)
   })
 })

@@ -1,37 +1,21 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <script src="ajax.js"></script>
-        <script src="test.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Ajax GET</h1>
-            <button type="button" name="get">Obtaing data</button>
-            <div class="get-data"></div>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="../node_modules/mocha/mocha.css" rel="stylesheet"/>
+</head>
+<body>
+  <div id="mocha"></div>
 
-            <h1>Ajax POST</h1>
-            <form id="post-form" method="post">
-                <input type="text">
-                <button type="submit">Send</button>
-            </form>
+  <script src="../dist/Ajax.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/sinon/pkg/sinon.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
 
-            <h1>Ajax DELETE</h1>
-            <input type="number">
-            <button type="button" name="delete">delete item</button>
-
-            <h1>Ajax get (JSON)</h1>
-            <button type="button" name="getJSON">Get JSON</button>
-            <div class="get-json"></div>
-
-            <h1>Ajax post (JSON)</h1>
-            <form id="post-json-form" action="/post" method="post">
-                <input type="text" name="key">
-                <input type="text" name="value">
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </body>
+  <script>mocha.setup('bdd');</script>
+  <script src="Ajax.test.js"></script>
+  <script>
+    mocha.run();
+  </script>
+</body>
 </html>

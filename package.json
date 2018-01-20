@@ -23,10 +23,13 @@
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-preset-env": "^1.2.1",
+    "chai": "^4.1.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-dest": "^0.2.3",
-    "gulp-uglyfly": "^1.4.2"
+    "gulp-uglyfly": "^1.4.2",
+    "mocha": "^5.0.0",
+    "sinon": "^4.1.6"
   },
   "dependencies": {}
 }
