@@ -4,7 +4,7 @@
   "description": "Standalone library for ajax requests",
   "main": "index.js",
   "scripts": {
-    "postinstall": "gulp; gulp removeCommonJS"
+    "postinstall": "npm i; gulp; gulp removeCommonJS"
   },
   "repository": {
     "type": "git",
